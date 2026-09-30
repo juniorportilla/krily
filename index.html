@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krily · Junior Estiben Portilla Ruiz · La Dorada, San Miguel (Putumayo)</title>
+<meta name="description" content="Krily es el nombre con el que Junior Estiben Portilla Ruiz, de 23 años, crea contenido desde La Dorada, San Miguel, Putumayo.">
+<meta property="og:title" content="Krily · Junior Estiben Portilla Ruiz">
+<meta property="og:description" content="Creador de contenido de La Dorada, San Miguel (Putumayo).">
+<meta property="og:type" content="profile">
+
+<style>
+  :root{
+    --ink:#14181d;
+    --ink-soft:#454c55;
+    --muted:#767d87;
+    --accent:#1f6f5c;
+    --line:#e6e8ea;
+    --bg:#ffffff;
+    --bg-soft:#f6f7f6;
+    --max:700px;
+    --wide:1000px;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:Georgia,"Times New Roman",Times,serif;
+    font-size:1.1rem;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- Cabecera ---------- */
+  .masthead{
+    border-bottom:1px solid var(--line);
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(6px);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .masthead-inner{
+    max-width:var(--wide);
+    margin:0 auto;
+    padding:.85rem 1.25rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+  }
+  .brand{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-weight:800;
+    letter-spacing:.24em;
+    font-size:1rem;
+    text-transform:uppercase;
+  }
+  .brand span{color:var(--accent);}
+  .masthead-tag{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:.68rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+
+  /* ---------- Contenido ---------- */
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 1.25rem;
+  }
+
+  .etiqueta{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:.7rem;
+    font-weight:700;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:3rem 0 1rem;
+  }
+
+  h1{
+    font-size:clamp(1.9rem,4.6vw,2.7rem);
+    line-height:1.16;
+    letter-spacing:-.01em;
+    margin:0 0 1rem;
+    font-weight:700;
+  }
+
+  .bajada{
+    font-size:1.08rem;
+    line-height:1.65;
+    color:var(--ink-soft);
+    margin:0 0 1.8rem;
+  }
+
+  .datos{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:.78rem;
+    color:var(--muted);
+    display:flex;
+    flex-wrap:wrap;
+    gap:.4rem .9rem;
+    align-items:center;
+    padding-bottom:1.6rem;
+    border-bottom:1px solid var(--line);
+  }
+  .datos strong{color:var(--ink-soft);font-weight:600;}
+  .punto{width:3px;height:3px;border-radius:50%;background:#c9ccd1;display:inline-block;}
+
+  /* ---------- Imagen ---------- */
+  figure{margin:2.2rem 0;}
+  .imagen{
+    width:100%;
+    aspect-ratio:16/9;
+    overflow:hidden;
+    background:#0f1a20;
+    border-radius:3px;
+  }
+  .imagen svg{display:block;width:100%;height:100%;}
+  figcaption{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:.76rem;
+    color:var(--muted);
+    line-height:1.55;
+    padding-top:.75rem;
+  }
+  figcaption b{color:var(--ink-soft);font-weight:700;}
+
+  /* ---------- Texto ---------- */
+  p{margin:0 0 1.6rem;}
+
+  h2{
+    font-size:clamp(1.25rem,2.8vw,1.5rem);
+    line-height:1.35;
+    margin:3rem 0 1rem;
+    font-weight:700;
+    letter-spacing:-.005em;
+  }
+
+  .destacado{
+    margin:2.8rem 0;
+    padding:1.4rem 1.6rem;
+    background:var(--bg-soft);
+    border-left:3px solid var(--accent);
+    border-radius:2px;
+    font-size:1.08rem;
+    line-height:1.7;
+    color:var(--ink-soft);
+  }
+  .destacado span{
+    display:block;
+    margin-top:.8rem;
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:.74rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+
+  /* ---------- Ficha ---------- */
+  .ficha{
+    border:1px solid var(--line);
+    border-radius:3px;
+    padding:1.5rem 1.7rem;
+    margin:2.8rem 0;
+  }
+  .ficha h3{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:.72rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin:0 0 1.1rem;
+    font-weight:700;
+  }
+  .ficha dl{
+    margin:0;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:.6rem 1.4rem;
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:.86rem;
+    line-height:1.55;
+  }
+  .ficha dt{color:var(--muted);}
+  .ficha dd{margin:0;color:var(--ink);}
+
+  /* ---------- Cierre ---------- */
+  .nota{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:.8rem;
+    color:var(--muted);
+    line-height:1.65;
+    border-top:1px solid var(--line);
+    margin-top:2.8rem;
+    padding-top:1.3rem;
+  }
+
+  .compartir{
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+    flex-wrap:wrap;
+    margin:2.2rem 0 0;
+  }
+  .compartir span{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:.7rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .compartir button{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:.78rem;
+    font-weight:600;
+    padding:.5rem 1rem;
+    border:1px solid var(--line);
+    background:transparent;
+    color:var(--ink-soft);
+    border-radius:999px;
+    cursor:pointer;
+    transition:border-color .18s, color .18s;
+  }
+  .compartir button:hover{border-color:var(--accent);color:var(--accent);}
+
+  /* ---------- Footer ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    margin-top:4.5rem;
+    padding:2.2rem 1.25rem;
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    font-size:.78rem;
+    color:var(--muted);
+  }
+  .footer-inner{
+    max-width:var(--wide);
+    margin:0 auto;
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem;
+    justify-content:space-between;
+    align-items:center;
+  }
+  footer strong{
+    color:var(--ink);
+    font-weight:800;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    font-size:.9rem;
+  }
+  footer strong span{color:var(--accent);}
+
+  @media (max-width:600px){
+    body{font-size:1.02rem;}
+    .masthead-tag{display:none;}
+    .ficha dl{grid-template-columns:1fr;gap:.1rem;}
+    .ficha dt{margin-top:.7rem;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">Kril<span>y</span></div>
+    <div class="masthead-tag">La Dorada · San Miguel · Putumayo</div>
+  </div>
+</header>
+
+<main>
+  <article class="wrap">
+
+    <p class="etiqueta">Perfil</p>
+
+    <h1>Krily: crear contenido desde La Dorada, sin apuro y sin salir del Putumayo</h1>
+
+    <p class="bajada">
+      Junior Estiben Portilla Ruiz tiene 23 años y vive en La Dorada, un corregimiento
+      de San Miguel. En internet se hace llamar Krily. Graba con lo que tiene, edita
+      cuando puede y muestra su tierra sin convertirla en espectáculo.
+    </p>
+
+    <div class="datos">
+      <strong>Krily</strong>
+      <span class="punto"></span>
+      <span>San Miguel (Putumayo)</span>
+      <span class="punto"></span>
+      <span id="fecha">—</span>
+    </div>
+
+    <!-- Imagen principal -->
+    <figure>
+      <div class="imagen">
+        <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" role="img"
+             aria-label="Paisaje tranquilo de montañas y río al atardecer">
+          <defs>
+            <linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#1b2a35"/>
+              <stop offset="45%"  stop-color="#6b4a3a"/>
+              <stop offset="75%"  stop-color="#c98a52"/>
+              <stop offset="100%" stop-color="#ecc89b"/>
+            </linearGradient>
+            <linearGradient id="agua" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#e8c79a" stop-opacity=".9"/>
+              <stop offset="100%" stop-color="#3f5d52" stop-opacity=".85"/>
+            </linearGradient>
+          </defs>
+
+          <rect width="1200" height="600" fill="url(#cielo)"/>
+          <circle cx="820" cy="330" r="46" fill="#ffe9c4" opacity=".85"/>
+          <circle cx="820" cy="330" r="110" fill="#ffdcae" opacity=".1"/>
+
+          <!-- Montañas -->
+          <path d="M0 380 L150 300 L280 360 L430 275 L570 370 L710 305 L860 385 L1010 315 L1200 400 L1200 600 L0 600 Z"
+                fill="#2e3a33" opacity=".88"/>
+          <path d="M0 460 L190 408 L380 468 L600 415 L830 475 L1010 435 L1200 488 L1200 600 L0 600 Z"
+                fill="#131d18"/>
+          <!-- Río -->
+          <path d="M480 600 C530 520 565 488 615 455 C655 428 665 404 655 378 L695 378 C705 412 695 438 650 470 C602 505 565 540 535 600 Z"
+                fill="url(#agua)" opacity=".8"/>
+          <!-- Bruma suave -->
+          <rect x="0" y="398" width="1200" height="46" fill="#f2d8b4" opacity=".14"/>
+        </svg>
+      </div>
+      <figcaption>
+        <b>Ilustración.</b> El paisaje de La Dorada, en San Miguel (Putumayo), donde
+        Junior Estiben Portilla Ruiz graba y edita su contenido.
+      </figcaption>
+    </figure>
+
+    <p>
+      Junior Estiben Portilla Ruiz nació y creció en La Dorada, un corregimiento de
+      San Miguel, en el sur del Putumayo. Tiene 23 años. En internet usa el nombre
+      de Krily, y con ese nombre firma los videos que publica desde hace algún tiempo
+      en sus redes.
+    </p>
+
+    <p>
+      No hay una gran historia de origen detrás de todo esto. Empezó como empieza
+      casi todo hoy: con un celular, algo de curiosidad y la decisión de publicar
+      lo primero sin pensarlo demasiado. Lo que vino después fue más lento:
+      aprender a grabar, aprender a editar, aprender a esperar.
+    </p>
+
+    <h2>El lugar</h2>
+
+    <p>
+      La Dorada no es un municipio grande ni aparece en las guías turísticas del país.
+      Es un corregimiento donde la vida transcurre a otro ritmo, entre el río, el monte
+      y la gente que se conoce desde siempre. Ese es el escenario donde Krily graba.
+    </p>
+
+    <p>
+      Sus videos no buscan impresionar. Muestran lo que hay: una calle, una comida,
+      una conversación, un paisaje a determinada hora de la tarde. Y eso, sin
+      proponérselo, terminó siendo lo que más conecta con quienes lo ven, sobre todo
+      con aquellos que se fueron del pueblo y ahora lo miran desde otra ciudad.
+    </p>
+
+    <div class="destacado">
+      Más que contar historias grandes, Krily se dedica a mostrar lo cotidiano:
+      su casa, su gente, su tierra. Ese gesto sencillo es, quizás, lo que mejor
+      define su trabajo.
+      <span>— Sobre su contenido</span>
+    </div>
+
+    <h2>Grabar con lo que hay</h2>
+
+    <p>
+      No tiene equipo profesional. Usa un celular, una ventana que da hacia el monte
+      y la luz de ciertas horas del día. Edita de noche, cuando el internet del pueblo
+      permite subir un archivo sin que se corte. Es un proceso lento, sin grandes
+      pretensiones técnicas.
+    </p>
+
+    <p>
+      Aun así, sus videos tienen algo que no depende del equipo: una manera tranquila
+      de mirar. Krily no exagera, no dramatiza, no busca el golpe de efecto. Habla
+      como hablaría cualquier joven de su edad en su pueblo, y esa naturalidad es
+      la que sostiene todo.
+    </p>
+
+    <aside class="ficha">
+      <h3>Datos</h3>
+      <dl>
+        <dt>Nombre</dt><dd>Junior Estiben Portilla Ruiz</dd>
+        <dt>Edad</dt><dd>23 años</dd>
+        <dt>Origen</dt><dd>La Dorada, San Miguel (Putumayo)</dd>
+        <dt>Nombre en redes</dt><dd>Krily</dd>
+        <dt>Actividad</dt><dd>Creador de contenido digital</dd>
+        <dt>Temas</dt><dd>Vida cotidiana, cultura y juventud del Putumayo</dd>
+      </dl>
+    </aside>
+
+    <h2>El nombre</h2>
+
+    <p>
+      Krily no es un apodo heredado ni un seudónimo complicado. Es un nombre corto,
+      fácil de recordar, que le sirvió para separar su vida personal de su vida en
+      internet sin dejar de ser él mismo. Con ese nombre responde comentarios,
+      publica videos y firma cada cosa que hace.
+    </p>
+
+    <p>
+      Con el tiempo, ese nombre dejó de ser solo una cuenta y pasó a ser un proyecto.
+      No un proyecto con grandes planes ni metas ambiciosas, sino uno sencillo:
+      seguir grabando, mejorar poco a poco y mostrar que se puede hacer contenido
+      desde cualquier lugar del país.
+    </p>
+
+    <h2>Lo que sigue</h2>
+
+    <p>
+      Junior Estiben no habla de cifras ni de objetivos grandes. Habla de grabar mejor,
+      de conseguir un micrófono decente, de visitar otros municipios del Putumayo y
+      contar lo que pasa allí. Habla, sobre todo, de quedarse.
+    </p>
+
+    <p>
+      Su idea es simple: no hace falta irse a una capital para tener algo que contar.
+      La Dorada ya tiene lo suyo —su gente, sus calles, su ritmo— y solo hacía falta
+      alguien que lo pusiera en una pantalla. Eso es, al final, lo que hace Krily
+      cada vez que enciende el celular.
+    </p>
+
+    <div class="compartir">
+      <span>Compartir</span>
+      <button type="button" data-share="copy">Copiar enlace</button>
+      <button type="button" data-share="x">Publicar en X</button>
+      <button type="button" data-share="wa">Enviar por WhatsApp</button>
+    </div>
+
+    <p class="nota">
+      <strong>Nota:</strong> este perfil fue elaborado a partir de la información
+      pública sobre Krily (Junior Estiben Portilla Ruiz), creador de contenido de
+      La Dorada, San Miguel (Putumayo). La imagen incluida es una ilustración
+      de referencia.
+    </p>
+
+  </article>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div><strong>Kril<span>y</span></strong></div>
+    <div>© <span id="anio">2025</span> · Junior Estiben Portilla Ruiz · La Dorada, San Miguel, Putumayo.</div>
+  </div>
+</footer>
+
+<script>
+  /* Fecha actual en español */
+  (function () {
+    var hoy = new Date();
+    var texto = hoy.toLocaleDateString('es-CO', {
+      year: 'numeric', month: 'long', day: 'numeric'
+    });
+    texto = texto.charAt(0).toUpperCase() + texto.slice(1);
+    document.getElementById('fecha').textContent = texto;
+    document.getElementById('anio').textContent = hoy.getFullYear();
+  })();
+
+  /* Botones de compartir */
+  (function () {
+    var url = encodeURIComponent(window.location.href);
+    var titulo = encodeURIComponent(document.title);
+
+    document.querySelectorAll('[data-share]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var tipo = btn.getAttribute('data-share');
+
+        if (tipo === 'copy') {
+          if (navigator.clipboard) {
+            navigator.clipboard.writeText(window.location.href)
+              .then(function () { aviso(btn, '¡Enlace copiado!'); })
+              .catch(function () { aviso(btn, 'Copia manualmente'); });
+          } else {
+            aviso(btn, 'Copia manualmente');
+          }
+          return;
+        }
+
+        if (tipo === 'x') {
+          window.open('https://twitter.com/intent/tweet?text=' + titulo + '&url=' + url,
+            '_blank', 'noopener');
+          return;
+        }
+
+        if (tipo === 'wa') {
+          window.open('https://api.whatsapp.com/send?text=' + titulo + '%20' + url,
+            '_blank', 'noopener');
+        }
+      });
+    });
+
+    function aviso(boton, mensaje) {
+      var original = boton.textContent;
+      boton.textContent = mensaje;
+      boton.disabled = true;
+      setTimeout(function () {
+        boton.textContent = original;
+        boton.disabled = false;
+      }, 1800);
+    }
+  })();
+</script>
+
+</body>
+</html>
